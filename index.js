@@ -10,7 +10,12 @@ const contactRoutes = require('./routes/contactRoutes');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: "https://myportfolio-b3lt.vercel.app", 
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"]
+})
+);
 app.use(bodyParser.json());
 
 // Routes
